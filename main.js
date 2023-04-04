@@ -1,73 +1,99 @@
-//
-//  JS File
-//  You may remove the code below - it's just boilerplate
-//
 
-//
-// Variables
-//
 
-// Constants
-const appID = "app";
-const headingText = "Develop. Preview. Ship.";
-const headingTextIcon = "🚀";
-const projectDueDate = "11 April 2023 11:59";
 
-// Variables
-let countdownDate = new Date(projectDueDate);
-
-// DOM Elements
-let appContainer = document.getElementById(appID);
-
-//
-// Functions
-//
-
-function calculateDaysLeft(countdownDate) {
-  const now = new Date().getTime();
-  const countdown = new Date(countdownDate).getTime();
-
-  const difference = (countdown - now) / 1000;
-
-  // Countdown passed already
-  if (difference < 1) {
-    return null;
-  }
-
-  const days = Math.floor(difference / (60 * 60 * 24));
-
-  return days;
+//loop to draw through the buttons
+//first page, first option
+const page={
+  imagePath: "./images/1.jpg", //background
+  options: [
+    {
+      text: "say Hi",
+      //next image/ page, the 4th page
+      load: 4,
+    },
+    {
+      text: "say Hi2",
+      //next image/ page, the 4th page
+      load: 3,
+    }
+  ]
 }
 
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
-    return;
+const novel=[
+  //first page inside datastructure, create a render to run the first page
+  {
+    imagePath: "./images/1.jpg", //background
+    options: [
+      {
+        text: "say Hi",
+        //next image/ page, the 4th page
+        load: 4,
+      },
+      {
+        text: "say Hi2",
+        //next image/ page, the 4th page
+        load: 3,
+      }
+    ]
+  },
+
+  //index 1
+  {
+    imagePath: "./images/2.jpg", //background
+    options: [
+      {
+        text: "say Hi",
+        //next image/ page, the 4th page
+        load: 4,
+      },
+      {
+        text: "say Hi2",
+        //next image/ page, the 4th page
+        load: 3,
+      }
+    ]
+  },
+
+  {
+    imagePath: "./images/3.jpg", //background
+    options: [
+      {
+        text: "say Hi",
+        //next image/ page, the 4th page
+        load: 4,
+      },
+      {
+        text: "say Hi2",
+        //next image/ page, the 4th page
+        load: 3,
+      }
+    ]
+  },
+
+  {
+    imagePath: "./images/4.jpg", //background
+    options: [], //empty array
+  },
+
+]
+
+const currentPage= 0;
+
+function drawNovel() {
+  if (novel[currentPage].options.length === 0)
+  {
+    console.log("no Options")
   }
 
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  const daysLeft = calculateDaysLeft(countdownDate);
-  let headingTextCalculated = headingText;
-
-  if (daysLeft) {
-    headingTextCalculated = headingTextCalculated.concat(
-      " In ",
-      daysLeft.toString(),
-      " days "
-    );
+  for (let i= 0; i < novel[currentPage].options.length; i++ ){
+    console.log("Option", novel[currentPage].options[i].text) //get button text
+    //create and update page
   }
-  h1.textContent = headingTextCalculated.concat(headingTextIcon);
-  appContainer.appendChild(h1);
+  console.log("Current image: ", novel[currentPage].imagePath) //get image path
 
-  // Init complete
-  console.log("App successfully initialised");
+
 }
 
-//
-// Inits & Event Listeners
-//
+drawNovel();
 
-inititialise();
+//check options and stuff and just refresh text
