@@ -8,11 +8,11 @@
 :root {
   /* Core colours */
   /*https://coolors.co/palette/9b5de5-f15bb5-fee440-00bbf9-00f5d4 */
-  --colour-purple: #9B5DE5;
-  --colour-pink: #f15bb5;
-  --colour-yellow: #fee440;
-  --colour-blue: #00bbf9;
-  --colour-green: #00f5d4;
+  --colour-purple: #9B5DE5; /*Vampire*/
+  --colour-pink: #f15bb5;   /*Manager*/
+  --colour-yellow: #fee440; /*Chef*/
+  --colour-blue: #00bbf9;   /*propeller kid*/
+  --colour-green: #00f5d4;  /*propeller */
   /*https://coolors.co/palette/fffcf2-ccc5b9-403d39-252422-eb5e28*/
   --colour-beige: #fffcf2;
   --colour-light-gray: #ccc5b9;
@@ -45,7 +45,7 @@ body {
 
 .navBar {
   padding: 10px;
-
+  background-color: var(--vampire-header-heading-colour); 
 }
 
 main {
@@ -60,11 +60,10 @@ main {
   background-position: center;
 }
 
-.vampire{
-  /* min-width: 100%;
-  min-height: 100%;*/
-  background-color: var(--vampire-header-heading-colour); 
-}
+/* .vampire{
+  min-width: 100%;
+  min-height: 100%;
+} */
 
 .doorImage{
   height: 100%;
@@ -82,6 +81,20 @@ main {
   width: 150px;
   height: 200px;
   margin: 20px;
+  object-fit: cover;
+}
+
+.otherImage {
+  width: 500px;
+  height: 100%;
+  object-fit: cover;
+  background-color: #00f5d4;
+  border: 1px solid red;
+}
+
+.centerImage {
+  display: flex;
+  justify-content: center;
 }
 
 .bottomContent {
