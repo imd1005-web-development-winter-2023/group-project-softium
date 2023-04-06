@@ -84,6 +84,7 @@ main {
 }
 
 .otherImage {
+  max-width: 70%;
   width: auto;
   max-height: 80%;
   object-fit: cover;
@@ -131,4 +132,12 @@ main {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .otherImage {
+    width: 30%;
+    max-height: 80%;
+    object-fit: cover;
+  }
 }
