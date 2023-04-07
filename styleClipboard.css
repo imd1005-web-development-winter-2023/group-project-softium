@@ -1,0 +1,46 @@
+/*
+ VARIABLES
+*/
+:root {
+    /* Core colours */
+    /*https://coolors.co/palette/9b5de5-f15bb5-fee440-00bbf9-00f5d4 */
+    --colour-purple: #9B5DE5;
+    --colour-pink: #f15bb5;
+    --colour-yellow: #fee440;
+    --colour-blue: #00bbf9;
+    --colour-green: #00f5d4;
+    /*https://coolors.co/palette/fffcf2-ccc5b9-403d39-252422-eb5e28*/
+    --colour-beige: #fffcf2;
+    --colour-light-gray: #ccc5b9;
+    --colour-gray: #403d39;
+    --colour-dark-gray: #252422;
+    --colour-orange: #eb5e28;
+  
+  
+    /* Header configuration */
+    --header-heading-colour: var(--colour-orange);
+  
+    /* Body configuration */
+    --body-default-colour: var(--colour-beige);
+    --body-background-colour: var(--colour-dark-gray);
+  
+    /*Vampire*/
+    --vampire-header-heading-colour: var(--colour-purple);
+  }
+  
+  /*
+    PAGE / BODY
+  */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--body-default-colour);
+    background-color: var(--body-background-colour);
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .navBar {
+    padding: 10px;
+    background-color: var(--colour-orange);
+  
+  }
