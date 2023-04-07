@@ -46,3 +46,19 @@
   
   }
   
+main .center {
+  background-color: var(--colour-orange);
+  padding-bottom: 5%;
+  padding-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#mcName {
+  margin-bottom: 10px;
+  height: 100px;
+  width: 200px;
+}
+
