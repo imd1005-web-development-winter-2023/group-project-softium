@@ -78,9 +78,9 @@ main {
   min-height: 100%;
 } */
 
-.doorImage{
-  height: 100%;
-  width: 100%;
+.doorImage {
+  height: 100vh;
+  width: 100vw;
   object-fit: cover;
 }
 
