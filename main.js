@@ -14,18 +14,21 @@ function next_page(e) {
     draw();
 }
 
+let name = "";
+let say = "";
 function draw() {
-    let name = "";
-    let say = "";
     switch(pagenum) {
         case 0:
             char.style.visibility = "hidden";
             document.body.style.backgroundImage = "url('vampireDoor.png')";
 
             name = you;
-            say = "Hm.. this address ordered.... A vegetarian pizza! Alright.";
+            say = "Hm... this address ordered.... A vegetarian pizza! Alright.";
             break;
         case 1:
+            say = "(rings the doorbell)";
+            break;
+        case 2:
             char.style.visibility = "visible";
             
             name = them;
