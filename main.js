@@ -31,6 +31,7 @@ function draw() {
         case 2:
             nameT = "";
             say = "Out of the door steps a tall man, dressed in Victorian-esque attire. He flinches at the light of the streetlights."
+            break;
         case 3:
             char.style.visibility = "visible";
             
