@@ -111,6 +111,9 @@ main {
 .centerImage {
   display: flex;
   justify-content: center;
+  max-height: 70%;
+  min-height: 20%;
+  width: 80%;
 }
 
 .bottomContent {
