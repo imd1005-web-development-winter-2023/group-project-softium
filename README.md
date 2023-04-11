@@ -41,3 +41,6 @@ There are two ways that you can do this:
 
 - Use the GitHub code editor web interface to paste your completed code right into GitHub
 - Clone your GitHub repository, work off of your local machine, and commit your changes through VSCode (recommended)
+
+## Presentation:
+https://docs.google.com/presentation/d/1N3NmZ7-A5ltxJUw9HWBmzPlTv82WdO9G10r-jMj7tAQ/edit?usp=drivesdk
