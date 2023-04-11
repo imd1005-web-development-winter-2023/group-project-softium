@@ -7,37 +7,140 @@
 */
 :root {
   /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
+  /*https://coolors.co/palette/9b5de5-f15bb5-fee440-00bbf9-00f5d4 */
+  --colour-purple: #9B5DE5; /*Vampire*/
+  --colour-pink: #f15bb5;   /*Manager*/
+  --colour-yellow: #fee440; /*Chef*/
+  --colour-blue: #00bbf9;   /*propeller kid*/
+  --colour-green: #00f5d4;  /*propeller */
+  /*https://coolors.co/palette/fffcf2-ccc5b9-403d39-252422-eb5e28*/
+  --colour-beige: #fffcf2;
+  --colour-light-gray: #ccc5b9;
+  --colour-gray: #403d39;
+  --colour-dark-gray: #252422;
+  --colour-orange: #eb5e28;
+
 
   /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
+  --header-heading-colour: var(--colour-dark-gray);
 
   /* Body configuration */
-  --body-default-colour: var(--colour-peppermint);
-  --body-background-colour: var(--colour-cello);
+  --body-default-colour: var(--colour-beige);
+  --body-background-colour: var(--colour-dark-gray);
+
+  /*Vampire*/
+  --vampire-header-heading-colour: var(--colour-purple);
 }
 
 /*
   PAGE / BODY
 */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Verdana", sans-serif;
   color: var(--body-default-colour);
   background-color: var(--body-background-colour);
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.navBar {
+  padding: 10px;
+  background-color: var(--vampire-header-heading-colour); 
+}
+
+.option1 {
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+}
+
+.option2 {
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
 }
 
 main {
-  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: start;
+  /* border: 1px solid red; */
+  /* background-image: url("./vampireDoor.png"); */
+  background-size: cover;
+  background-position: center;
+}
 
+/* .vampire{
+  min-width: 100%;
+  min-height: 100%;
+} */
+
+.doorImage {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+#bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#right {
+  position: absolute;
+  right: 0;
+  z-index: 9999;
+}
+
+.mcImage {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+
+.otherImage {
+  max-width: 70%;
+  width: auto;
+  max-height: 70%;
+  object-fit: cover;
+  min-height: 20%;
+}
+
+.centerImage {
   display: flex;
   justify-content: center;
-  align-items: center;
+  max-height: 70%;
+  min-height: 20%;
+  width: 80%;
 }
+
+.bottomContent {
+  background-color: var(--vampire-header-heading-colour);
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  height: 10%;
+  width: 100vw;
+}
+
+.textBox {
+  height: 150px;
+  margin-left: 200px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+/* 
+.divImage{
+  background-image: url("imageurl.jpg");
+  background-repeat: no-repeat;
+
+  background-size: contain;
+} */
 
 /*
   Screen reader text utility class
@@ -52,4 +155,22 @@ main {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+@media only screen and (min-width: 1200px) {
+  .otherImage {
+    width: 30%;
+    max-height: 70%;
+    min-height: 20%;
+    object-fit: cover;
+  }
+
+  .centerImage {
+    display: flex;
+    justify-content: center;
+    max-height: 70%;
+    min-height: 20%;
+    width: 80%;
+  }
+  
 }

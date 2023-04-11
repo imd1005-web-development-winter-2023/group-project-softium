@@ -1,73 +1,39 @@
-//
-//  JS File
-//  You may remove the code below - it's just boilerplate
-//
+let pagenum = 0;
+let you = "Pizza Girl";
+let them = "Vampire";
 
-//
-// Variables
-//
+const char = document.querySelector("#character");
+const next_button = document.querySelector("#nextButton");
+const name_text = document.querySelector("#characterName");
+const say_text = document.querySelector("#storyText");
 
-// Constants
-const appID = "app";
-const headingText = "Develop. Preview. Ship.";
-const headingTextIcon = "🚀";
-const projectDueDate = "11 April 2023 11:59";
-
-// Variables
-let countdownDate = new Date(projectDueDate);
-
-// DOM Elements
-let appContainer = document.getElementById(appID);
-
-//
-// Functions
-//
-
-function calculateDaysLeft(countdownDate) {
-  const now = new Date().getTime();
-  const countdown = new Date(countdownDate).getTime();
-
-  const difference = (countdown - now) / 1000;
-
-  // Countdown passed already
-  if (difference < 1) {
-    return null;
-  }
-
-  const days = Math.floor(difference / (60 * 60 * 24));
-
-  return days;
+next_button.addEventListener("click", next_page);
+function next_page(e) {
+    pagenum++;
+    console.log(`page ${pagenum}`);
+    draw();
 }
 
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
-    return;
-  }
+function draw() {
+    let name = "";
+    let say = "";
+    switch(pagenum) {
+        case 0:
+            char.style.visibility = "hidden";
+            document.body.style.backgroundImage = "url('vampireDoor.png')";
 
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  const daysLeft = calculateDaysLeft(countdownDate);
-  let headingTextCalculated = headingText;
-
-  if (daysLeft) {
-    headingTextCalculated = headingTextCalculated.concat(
-      " In ",
-      daysLeft.toString(),
-      " days "
-    );
-  }
-  h1.textContent = headingTextCalculated.concat(headingTextIcon);
-  appContainer.appendChild(h1);
-
-  // Init complete
-  console.log("App successfully initialised");
+            name = you;
+            say = "Hm.. this address ordered.... A vegetarian pizza! Alright.";
+            break;
+        case 1:
+            char.style.visibility = "visible";
+            
+            name = them;
+            say = "Who dares disturb me at this hour?!";
+            break;
+    }
+    name_text.textContent = name;
+    say_text.textContent = say;
 }
 
-//
-// Inits & Event Listeners
-//
-
-inititialise();
+draw();
