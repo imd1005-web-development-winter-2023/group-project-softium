@@ -14,7 +14,7 @@ function next_page(e) {
     draw();
 }
 
-let name = "";
+let nameT = "";
 let say = "";
 function draw() {
     switch(pagenum) {
@@ -22,20 +22,23 @@ function draw() {
             char.style.visibility = "hidden";
             document.body.style.backgroundImage = "url('vampireDoor.png')";
 
-            name = you;
-            say = "Hm... this address ordered.... A vegetarian pizza! Alright.";
+            nameT = you;
+            say = "Hm... this address ordered.... A vegetarian pizza for dinner! Alright.";
             break;
         case 1:
             say = "(rings the doorbell)";
             break;
         case 2:
+            nameT = "";
+            say = "Out of the door steps a tall man, dressed in Victorian-esque attire. He flinches at the light of the streetlights."
+        case 3:
             char.style.visibility = "visible";
             
-            name = them;
-            say = "Who dares disturb me at this hour?!";
+            nameT = them;
+            say = "Who dares disturb me at this hour!?";
             break;
     }
-    name_text.textContent = name;
+    name_text.textContent = nameT;
     say_text.textContent = say;
 }
 
