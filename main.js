@@ -1,106 +1,39 @@
 let pagenum = 0;
+let you = "Pizza Girl";
+let them = "Vampire";
 
-const c1_1 = [
-    "Hello",
-    "How are you",
-    "Do you have my pizza?",
-    "I'm very hungry today"
-]
+const char = document.querySelector("#character");
+const next_button = document.querySelector("#nextButton");
+const name_text = document.querySelector("#characterName");
+const say_text = document.querySelector("#storyText");
 
+next_button.addEventListener("click", next_page);
+function next_page(e) {
+    pagenum++;
+    console.log(`page ${pagenum}`);
+    draw();
+}
 
-//loop to draw through the buttons
-//first page, first option
-const page={
-    imagePath: "./images/1.jpg", //background
-    options: [
-      {
-        text: "say Hi",
-        //next image/ page, the 4th page
-        load: 4,
-      },
-      {
-        text: "say Hi2",
-        //next image/ page, the 4th page
-        load: 3,
-      }
-    ]
-  }
-  
-  const novel=[
-    //first page inside datastructure, create a render to run the first page
-    {
-      imagePath: "./images/1.jpg", //background
-      options: [
-        {
-          text: "say Hi",
-          //next image/ page, the 4th page
-          load: 4,
-        },
-        {
-          text: "say Hi2",
-          //next image/ page, the 4th page
-          load: 3,
-        }
-      ]
-    },
-  
-    //index 1
-    {
-      imagePath: "./images/2.jpg", //background
-      options: [
-        {
-          text: "say Hi",
-          //next image/ page, the 4th page
-          load: 4,
-        },
-        {
-          text: "say Hi2",
-          //next image/ page, the 4th page
-          load: 3,
-        }
-      ]
-    },
-  
-    {
-      imagePath: "./images/3.jpg", //background
-      options: [
-        {
-          text: "say Hi",
-          //next image/ page, the 4th page
-          load: 4,
-        },
-        {
-          text: "say Hi2",
-          //next image/ page, the 4th page
-          load: 3,
-        }
-      ]
-    },
-  
-    {
-      imagePath: "./images/4.jpg", //background
-      options: [], //empty array
-    },
-  
-  ]
-  
-  const currentPage= 0;
-  
-  function drawNovel() {
-    if (novel[currentPage].options.length === 0)
-    {
-      console.log("no Options")
+function draw() {
+    let name = "";
+    let say = "";
+    switch(pagenum) {
+        case 0:
+            char.style.visibility = "hidden";
+            document.body.style.backgroundImage = "url('vampireDoor.png')";
+
+            name = you;
+            say = "Hm.. this address ordered.... A vegetarian pizza! Alright.";
+            break;
+        case 1:
+            char.style.visibility = "visible";
+            
+            name = them;
+            say = "Who dares disturb me at this hour?!";
+            break;
     }
-  
-    for (let i= 0; i < novel[currentPage].options.length; i++ ){
-      console.log("Option", novel[currentPage].options[i].text) //get button text
-      //create and update page
-    }
-    console.log("Current image: ", novel[currentPage].imagePath) //get image path
-  
-  
-  }
-  
-  drawNovel();
-  
-  //check options and stuff and just refresh text
+    name_text.textContent = name;
+    say_text.textContent = say;
+}
+
+draw();
